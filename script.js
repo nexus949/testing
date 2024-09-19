@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let openMenu = document.querySelector('.fa-xmark');
     let sideNavBar = document.querySelector('.navBarforSmallerScreens');
     let navLinks = document.querySelectorAll('.navEl');
-    let projectButton = document.querySelector('.projectsButton');
-    let techStack = document.querySelectorAll('.techStack');
 
     closedMenu.addEventListener('click', () => {
         closedMenu.style.display = 'none';
