@@ -1,0 +1,141 @@
+html, body{
+    overflow-x: hidden;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--body-color);
+}
+
+.login-container{
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+#login-form{
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 450px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.login-page-logo{
+    width: 100px;
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.login-heading{
+    font-weight: 700;
+    font-size: 35px;
+    color: var(--primary-color);
+}
+
+.email-label, .password-label{
+    font-size: 18px;
+    margin: 30px 0 5px 0;
+    font-weight: 600;
+}
+
+.email, .password{
+    width: 100%;
+    height: 50px;
+    padding: 8px;
+    cursor: text;
+    border: 1.8px solid;
+    outline: none;
+}
+
+input:focus{
+    border: 1.8px solid var(--primary-color);
+}
+
+.forgot-password{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.forgot-password a:hover{
+    color: var(--primary-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.login-button{
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    margin: 15px 0;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all 0.2s ease;
+}
+
+.login-button:hover{
+    transform: translateX(5px);
+    cursor: pointer;
+}
+
+.register{
+    font-size: 18px;
+    margin: 40px 0 10px 0;
+    text-align: center;
+}
+
+.register a, .forgot-password a{
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.forgot-password a{
+    color: var(--primary-font-color);
+}
+
+.register a:hover{
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .login-heading {
+        font-size: 26px;
+    }
+
+    .login-page-logo {
+        width: 80px;
+        height: 35px;
+    }
+
+    .email-label, .password-label {
+        font-size: 16px;
+    }
+
+    .email, .password, .login-button {
+        height: 40px;
+    }
+
+    .login-button {
+        font-size: 20px;
+    }
+
+    .register {
+        font-size: 14px;
+    }
+}

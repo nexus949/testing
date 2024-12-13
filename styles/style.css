@@ -1,239 +1,196 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Overpass", sans-serif;
-    font-weight: 500;
-    cursor: default;
-}
-
-html {
-    scroll-behavior: smooth;
+html, body{
     overflow-x: hidden;
-}
-
-:root {
-    /*Base color will not change*/
-    --base-accent-color: #224455;
-
-    --primary-accent-color: #224455;
-    --primary-font-color: #181a1b;
-    --primary-background-color: #f7f7f7;
-    --linear-gradient: linear-gradient(135deg, white, #e9f5f7);
-
-    /*Background for the tech Stack*/
-    --tech-tiles-background: #f7f7f7;
-
-    /*Background for the contact form input fields*/
-    --input-field-background-color: white;
-
-    /*project button and tech stack hover shadow*/
-    --project-button-hover-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    --tech-stack-hover-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.dark-mode {
-    --primary-accent-color: #9FC5D9;
-    --primary-font-color: #f7f7f7;
-    --primary-background-color: #181a1b;
-    --linear-gradient: linear-gradient(135deg, rgb(24, 26, 27), rgb(18, 46, 51));
-    ;
-
-    /*Background for the tech Stack*/
-    --tech-tiles-background: #121314;
-
-    /*Background for the contact form input fields*/
-    --input-field-background-color: #121314;
-
-    /*project button and tech stack hover shadow*/
-    --project-button-hover-shadow: rgba(0, 0, 0, 0.5) 0px 15px 30px 5px;
-    --tech-stack-hover-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 body {
-    max-width: 100vw;
+    width: 100vw;
     min-height: 100dvh;
-    margin: 0;
-    background-color: var(--primary-background-color);
-    overflow-x: hidden;
-    transition: all 0.3s ease;
+    background-color: var(--body-color);
 }
 
-.container {
+.home-container {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    color: var(--primary-font-color);
+    text-align: center;
+    padding: 0 15px 15px;
 }
 
-header {
-    width: 1200px;
-    height: 100px;
-    padding-top: 20px;
-    z-index: 999;
-    margin: 0 auto;
+.hero {
+    padding: 40px 20px 50px 20px;
 }
 
-.navBar {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
+.hero h1{
+    font-size: 80px;
+    color: var(--primary-color);
+    font-family: "Dela Gothic One", serif;;
+    font-weight: 700;
+    margin: 0 0 10px;
 }
 
-.profilePicture {
-    width: 60px;
-    height: 60px;
-    border-radius: 10px;
-    box-shadow: rgba(12, 10, 10, 0.2) 0px 2px 8px 0px;
-    cursor: pointer;
-    user-select: none;
-    transition: all 0.3s ease;
-}
-
-.navEl {
-    display: inline-block;
-    margin-right: 40px;
+.hero p{
     font-size: 20px;
+    color: var(--primary-font-color);
+    font-family: "Dela Gothic One", serif;
+    margin: 10px 0 20px;
+}
+
+.cta-button{
+    width: 200px;
+    height: 50px;
+    padding: 5px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     cursor: pointer;
-    user-select: none;
     transition: all 0.3s ease;
 }
 
-.navEl:hover {
-    transform: translateY(-5px);
-    color: var(--primary-accent-color);
-    font-size: 22px;
-    font-weight: 700;
+.cta-button:hover {
+    background-color: #4A7CD9; 
 }
 
-.navBarforSmallerScreens {
-    display: none;
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
 }
 
-main {
-    width: 1200px;
-    height: 100%;
+.feature-card:nth-child(1), .feature-card:nth-child(3){
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
-section {
-    margin-bottom: 100px;
-    color: var(--primary-font-color);
+.feature-card {
+    border-radius: 8px;
+    padding: 22px;
+    width: 280px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-footer {
-    margin-bottom: 25px;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-a {
-    text-decoration: none;
-    color: var(--primary-font-color);
-}
-
-.fa-brands,
-.fa-solid {
+.feature-card > *{
     cursor: pointer;
 }
 
-@media (max-width: 1199px) {
-    header {
-        width: 1000px;
-    }
-
-    main {
-        width: 1000px;
-    }
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 
-@media (max-width: 995px) {
-    header {
-        width: 768px;
-    }
-
-    main {
-        width: 768px;
-    }
-
+.feature-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-@media (max-width: 767px) {
-    header {
-        width: 480px;
-        padding: 0 5px 0 5px;
+.feature-card p {
+    font-size: 16px;
+}
+
+.fa-solid {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.already-have-an-accout, .login-button{
+    font-size: 20px;
+    font-weight: 600;
+    padding: 20px 0 20px 0;
+}
+
+.login-button{
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.login-button:hover{
+    text-decoration: underline;
+}
+
+.footer {
+    padding: 20px;
+    font-size: 12px;
+    margin: 30px 0 0 0;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 25px 20px;
     }
 
-    main {
-        width: 480px;
+    .hero h1 {
+        font-size: 50px;
     }
 
-    section {
-        padding: 0 20px 0 20px;
-        margin-bottom: 40px;
+    .hero p {
+        font-size: 16px;
     }
 
-    .profilePicture {
-        width: 45px;
-        height: 45px;
+    .cta-button {
+        width: 180px;
+        font-size: 16px;
     }
 
-    .navOptions {
-        display: none;
+    .features {
+        padding: 20px 10px;
     }
 
-    .navBarforSmallerScreens {
-        display: block;
-        user-select: none;
-        cursor: pointer;
+    .feature-card {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .feature-card h3 {
         font-size: 20px;
-        position: relative;
     }
 
-    .fa-xmark {
-        display: none;
+    .feature-card p {
+        font-size: 14px;
     }
 
-    .sideMenu {
-        width: 200px;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        position: absolute;
-        right: 0;
-        padding: 10px 10px 10px 0;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        transform: translateY(-50%);
-        opacity: 0;
-        transition: all 0.2s ease;
+    .already-have-an-accout, .login-button {
+        font-size: 16px;
     }
 
-    .active {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    .navLinkForSmallerScreens {
-        margin: 5px 0 10px 0;
+    .already-have-an-accout{
+        padding: 15px 0 15px 0;
     }
 }
 
-@media (max-width: 479px) {
-    header {
-        width: 350px;
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 40px;
     }
 
-    main {
-        width: 350px;
+    .hero p {
+        font-size: 14px;
     }
 
-    .profilePicture {
-        width: 35px;
-        height: 35px;
+    .cta-button {
+        width: 150px;
+        font-size: 14px;
+    }
+
+    .footer {
+        font-size: 10px;
+    }
+
+    .footer a {
+        font-size: 10px;
     }
 }

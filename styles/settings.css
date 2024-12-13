@@ -1,0 +1,358 @@
+html, body{
+    overflow-x: hidden;
+}
+
+body{
+    width: 100vw;
+    min-height: 100dvh;
+    background-color: var(--body-color);
+}
+
+.settings-container{
+    width: 55%;
+    min-height: 100%;
+    max-width: 1200px;
+    min-width: 370px;
+    margin: 0 auto;
+    padding: 0 15px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+
+.settings-title{
+    width: 100%;
+    padding-top: 10px;
+}
+
+.settings-heading{
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.profile{
+    width: 100%;
+    height: auto;
+}
+
+.profile-heading, .general-settings-heading{
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+#info-change-form{
+    width:  100%;
+    height: fit-content;
+}
+
+.first-name-and-last-name{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+}
+
+.first-name, .last-name, .email, .password{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.last-name{
+    margin-left: 20px;
+}
+
+.label-for-first-name, .label-for-last-name, .label-for-email, .label-for-password{
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.first-name-input-field, .last-name-input-field, .email-input-field, .password-input-field, .confirm-current-password, .current-password-field, .new-password-field, .confirm-new-password-field{
+    font-size: 16px;
+    padding: 5px;
+    width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #DCDCDC;
+    cursor: text;
+}
+
+.current-password-field, .new-password-field, .confirm-new-password-field{ 
+    display: block;
+    margin-bottom: 15px;
+    width: 350px;
+}
+
+.email-input-field{
+    width: 420px; /*Width of name and email fields + the extra margin on the surname field*/
+}
+
+.password-input-field{
+    width: 420px;
+}
+
+#change-password-send-request-form{ display: none; }
+
+.info-submit-button, .change-password-button, .logout-button, .delete-account-button, .update-pass-button{
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.12s ease;
+    margin: 10px 0;
+}
+
+.change-password-button{ margin-bottom: 15px; }
+
+.confirm-current-password{
+    width: 250px;
+    padding: 8px;
+    margin: 0 15px;
+}
+
+.update-pass-button{ 
+    width: 180px; 
+}
+
+.change-password-button, .delete-account-button{
+    width: 200px;
+}
+
+.info-submit-button:active, .change-password-button:active, .logout-button:active, .delete-account-button:active, .reset-pass-button:active{
+    scale: 0.92;
+}
+
+hr{
+    margin: 20px 0;
+}
+
+.general-settings{
+    margin: 25px 0;
+}
+
+.change-password-title, .logout-title, .delete-account-title{
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.delete-account-title{
+    color: red;
+}
+
+.delete-account-button{
+    width: 170px;
+    background-color: red;
+}
+
+.fa-solid{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+footer{
+    width: 100%;
+    text-align: center;
+    margin: 30px 0;
+    font-weight: 600;
+}
+
+/*popups styles*/
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% transparent black */
+    display: none;
+    z-index: 999; /* Ensures it's on top of the background content */
+}
+
+.deletion-confirmation-popup, .logout-popup{
+    width: 600px;
+    height: 300px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 15px;
+    text-align: justify;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #E5E5F0;
+    display: none;
+    z-index: 1000; /* Above the overlay */
+}
+
+.deletion-confirmation-popup{ height: 330px; }
+
+.popup-logo{
+    width: 100px;
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.account-deletion-warning, .account-deletion-confirmation{
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+.logout-popup p{ margin-bottom: 20px; }
+
+.account-deletion-confirmation, .logout-confirmation{
+    font-weight: 600;
+}
+
+.delete-account-yes, .delete-account-cancel, .logout-yes, .logout-cancel{
+    width: auto;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.delete-account-yes, .delete-account-cancel{ font-size: 14px; }
+ 
+.delete-account-yes, .logout-yes{ margin-right: 10px; }
+
+.delete-account-yes:hover, .delete-account-cancel:hover, .cancel-delete-account-button:hover, .logout-yes:hover, .logout-cancel:hover{
+    transform: translateY(-3px);
+}
+
+.enter-your-password-to-delete-account{
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.deletion-password{
+    width: 300px;
+    height: 40px;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #DCDCDC;
+    margin-bottom: 25px;
+    cursor: text;
+}
+
+.disabled-buttons{
+    opacity: 60%;
+    transition: none !important;
+    transform: none !important;
+    scale: none !important;
+}
+
+.disabled-buttons:active, .disabled-buttons:hover{
+    transform: none;
+    scale: none;
+}
+
+.non-disabled-buttons{ 
+    opacity: 100%;
+    scale: 0.92; 
+}
+
+.account-deletion-warning{
+    margin-top: 0;
+}
+
+@media(max-width: 1028px){
+    .confirm-current-password{
+        margin-left: 0;
+    }
+
+    .change-password-button{
+        margin-right: 10px;
+    }
+}
+
+@media(max-width: 900px){
+    .settings-container{
+        width: 100%;
+        padding: 15px;
+    }
+
+    .deletion-confirmation-popup, .deletion-activation-popup, .logout-popup{
+        width: auto;
+        min-width: 475px;
+        height: auto;
+    }
+
+    /*Settings page specific navbar style*/
+    .navbar{
+        padding: 0 15px;
+    }
+
+    .navElement > a{
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 480px){
+    .settings-heading{
+        font-size: 24px;
+    }
+
+    .profile-heading, .general-settings-heading{
+        font-size: 20px;
+    }
+
+    .surname{
+        margin-left: 10px;
+    }
+
+    .label-for-name, .label-for-surname, .label-for-email{
+        font-size: 16px;
+    }
+
+    .first-name-input-field, .last-name-input-field, .email-input-field, .confirm-current-password{
+        font-size: 14px;
+        width: 165px;
+    }
+
+    .change-password-description, .logout-description, .delete-account-description{
+        font-size: 15px;
+    }
+
+    .confirm-current-password{
+        width: 180px;
+        margin-left: 0;
+    }
+
+    .email-input-field{
+        width: 340px;
+    }
+
+    .info-submit-button, .change-password-button, .logout-button, .delete-account-button, .reset-pass-button{
+        width: 180px;
+        font-size: 14px;
+    }
+
+    .deletion-confirmation-popup, .deletion-activation-popup, .logout-popup{
+        width: auto;
+        min-width: 400px;
+        height: auto;
+    }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Buddy | Settings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/styles/rootStyles.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/settings.css">
+</head>
+
+<body>
+    <div class="settings-container">
+
+        <nav class="navbar">
+            <img src="/images/budget-buddy.png" alt="Logo" class="logo">
+            <ul class="navEl">
+                <li class="navElement"><a href="/user/dashboard">Dashboard</a></li>
+                <li class="navElement"><a href="/user/settings" style="margin-right: 0;">Settings</a></li>
+            </ul>
+        </nav>
+
+        <div class="deletion-confirmation-popup">
+            <img src="/images/budget-buddy.png" alt="logo" class="popup-logo">
+
+            <p class="account-deletion-warning">This action will permanently delete your account and all associated
+                data. Please note that this process is irreversible.</p>
+            <p class="account-deletion-confirmation">Enter your password to continue.</p>
+            <input type="password" class="deletion-password" placeholder="Enter your password" required>
+
+            <div class="deletion-confirmation-buttons">
+                <button type="submit" class="delete-account-yes" required>Delete My Account</button>
+                <button class="delete-account-cancel">Cancel</button>
+            </div>
+        </div>
+
+        <div class="logout-popup">
+            <img src="/images/budget-buddy.png" alt="logo" class="popup-logo">
+
+            <p class="logout-warning">This action will log you out of your account, you would need to enter your
+                password the next time you open your account.</p>
+            <p class="logout-confirmation">Are You Sure you want to LogOut of your account ?</p>
+
+            <div class="logout-confirmation-buttons">
+                <button type="submit" class="logout-yes">Logout</button>
+                <button class="logout-cancel">Cancel</button>
+            </div>
+        </div>
+
+        <div class="settings-title"> <h1 class="settings-heading">Settings</h1>
+            <hr></div>
+
+        <div class="profile">
+            <h2 class="profile-heading">Profile</h2>
+
+            <form id="info-change-form">
+                <div class="first-name-and-last-name">
+
+                    <div class="first-name">
+                        <label for="firstName" class="label-for-first-name">First Name</label>
+                        <input name="firstName" value="" class="first-name-input-field" placeholder="First Name" required>
+                    </div>
+
+                    <div class="last-name">
+                        <label for="lastName" class="label-for-last-name">Last Name</label>
+                        <input name="lastName" value="" class="last-name-input-field" placeholder="Last Name" required>
+                    </div>
+
+                </div>
+
+                <div class="email">
+                    <label for="email" class="label-for-email">Email</label>
+                    <input name="email" value="" class="email-input-field" placeholder="Email" required>
+                </div>
+
+                <div class="password">
+                    <label for="password" class="label-for-password">Password</label>
+                    <input name="password" value="" class="password-input-field" type="password" placeholder="Enter your current Password" required>
+                </div>
+
+                <button type="submit" class="info-submit-button disabled-buttons" disabled>Save<i class="fa-solid fa-floppy-disk"></i></button>
+            </form>
+
+        </div>
+
+        <hr>
+
+        <div class="general">
+            <h2 class="general-settings-heading">General</h2>
+
+            <div class="change-password general-settings">
+                <p class="change-password-title">Change Password</p>
+                <p class="change-password-description">Change your password to secure your account. This will log you
+                    out and you have to enter your password to get access to your account.</p>
+                
+                <button class="change-password-button .non-disabled-buttons">Change Password<i class="fa-solid fa-lock"></i></button>
+
+                <form action="" id="change-password-send-request-form">
+                    <input type="password" name="currentPassword" placeholder="Enter current Password" class="current-password-field" required>
+                    <input type="password" name="newPassword" placeholder="Enter new Password" class="new-password-field" required>
+                    <input type="password" name="confirmNewPassword" placeholder="Confirm New Password" class="confirm-new-password-field" required>
+
+                    <button type="submit" class="update-pass-button">Update Password</button>
+                </form>
+            </div>
+
+            <div class="logout general-settings">
+                <p class="logout-title">LogOut</p>
+                <p class="logout-description">Saves data and logs you out of your account.</p>
+
+                <button class="logout-button .non-disabled-buttons">LogOut<i
+                        class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
+
+            <div class="delete-account">
+                <p class="delete-account-title">Delete Account</p>
+                <p class="delete-account-description">Deletes your account and permanently erases user data.</p>
+                <button class="delete-account-button .non-disabled-buttons">Delete Account<i
+                        class="fa-solid fa-trash"></i></button>
+            </div>
+        </div>
+
+        <hr>
+
+        <footer>Made By Aritra © 2024</footer>
+    </div>
+
+    <script type="module" src="/scripts/settings.js" defer></script>
+</body>
+
+</html>
